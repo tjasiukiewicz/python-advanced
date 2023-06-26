@@ -1,0 +1,88 @@
+In [1]: l1 = [1, 2, 3]
+
+In [2]: l2 = l1
+
+In [3]: l1[1] = 200
+
+In [4]: l2
+Out[4]: [1, 200, 3]
+
+In [5]: l3 = [ 100, 1000, l2 ]
+
+In [6]: l3
+Out[6]: [100, 1000, [1, 200, 3]]
+
+In [7]: l2[0] = 111
+
+In [8]: l3
+Out[8]: [100, 1000, [111, 200, 3]]
+
+In [9]: t1 = ( "ala", 123, l1 )
+
+In [10]: t1[0] = "tola"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-10-7da726afe98f> in <module>
+----> 1 t1[0] = "tola"
+
+TypeError: 'tuple' object does not support item assignment
+
+In [11]: t1
+Out[11]: ('ala', 123, [111, 200, 3])
+
+In [12]: del l1
+
+In [13]: t1
+Out[13]: ('ala', 123, [111, 200, 3])
+
+In [14]: t1[2][0] = "coś"
+
+In [15]: t1
+Out[15]: ('ala', 123, ['coś', 200, 3])
+
+In [16]: def add_value(a = []):
+    ...:     a.append(1)
+    ...: 
+
+In [17]: def add_value(a = []):
+    ...:     a.append(1)
+    ...:     return a
+    ...: 
+
+In [18]: add_value()
+Out[18]: [1]
+
+In [19]: add_value()
+Out[19]: [1, 1]
+
+In [20]: add_value()
+Out[20]: [1, 1, 1]
+
+In [21]: add_value([123, 123])
+Out[21]: [123, 123, 1]
+
+In [22]: add_value()
+Out[22]: [1, 1, 1, 1]
+
+In [23]: add_value()
+Out[23]: [1, 1, 1, 1, 1]
+
+In [24]: add_value()
+Out[24]: [1, 1, 1, 1, 1, 1]
+
+In [25]: class X:
+    ...:     def __init__(self):
+    ...:         print("Class X construct")
+    ...:     def __del__(self):
+    ...:         print("Class X destruct")
+    ...: 
+
+In [26]: def add_value(a = X()):
+    ...:     pass
+    ...: 
+Class X construct
+
+In [27]: add_value(12)
+
+In [28]: del add_value
+Class X destruct
