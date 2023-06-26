@@ -1,0 +1,15 @@
+In [1]: data = [1, 2, 3, 4, 55]
+
+In [2]: first, *my_data, last = data
+
+In [3]: my_data
+Out[3]: [2, 3, 4]
+
+In [4]: _, *my_data, _ = data
+
+In [5]: %timeit _, *my_data, _ = data
+252 ns ± 4.68 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+In [6]: %timeit my_data = data[1:-1]
+140 ns ± 4.13 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
