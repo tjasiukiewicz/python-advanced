@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 
+from functools import wraps
+
 def my_cache(func):
     cache = {}
 
+    @wraps(func)
     def wrapper(*args, **kwargs):
-        return func(*args, **kwargs)
+        key = tuple(args) + tuple(kwargs.items())
+        if key not in cache:
+            cache[key] = func(*args, **kwargs)
+        return cache[key]
 
     return wrapper
 
