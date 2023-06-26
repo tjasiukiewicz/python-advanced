@@ -1,0 +1,18 @@
+Celeme jest aplkacja do gry four in row, na konsoli dla 2 graczy (ludzie).
+Prezentacja w ASCII.
+
+   1 2 3 4 5 6 7
+  +-+-+-+-+-+-+-+
+  | | | | | | | |
+  +-+-+-+-+-+-+-+
+  ...
+  +-+-+-+-+-+-+-+
+  |X|O|X| | | | |
+  +-+-+-+-+-+-+-+
+   1 2 3 4 5 6 7
+
+1. Chcę zobaczyć pustą planszę gry.
+2. Chcę wrzucić żeton do określonej kolumny i zobaczyć wynik.
+   W przypadku kolumny pełnej, chcę uzyskać informację o błędzie.
+3. Chcę by gracze (Adam i Ewa), wrzucali żetony naprzemiennie.
+   Chcę widzieć wyniki tych działań.
