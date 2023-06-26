@@ -1,0 +1,24 @@
+https://github.com/tjasiukiewicz/python-advanced.git
+https://sourcemaking.com/
+
+
+https://refactoring.guru/pl
+(sum((lis-av)**2)/len(lis))**(1/2)
+av = np.average(lis)
+# av = (sum(lis)/len(lis))
+(sum((lis-av)**2)/len(lis))**(1/2)
+def standard(a):
+    avg_a = sum(a)/len(a)
+    return (reduce(lambda x, s: s + avg_a  - x, a)/len(a))**(1/2)
+
+Wyniki:
+In [2]: %timeit standard_deviation1(data)
+2.74 µs ± 93.3 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+In [3]: %timeit standard_deviation4(data)
+1.54 µs ± 62 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+https://zpe.gov.pl/a/przeczytaj/DxtPfl1Iq
+
+
+
+
