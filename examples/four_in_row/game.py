@@ -15,7 +15,12 @@ class Game:
         self.__board.display()
 
         while not self.__board.is_full():
-            column = self.__current_player.get_column()
+
+            try:
+                column = self.__current_player.get_column()
+            except ValueError:
+                print('Incorrect input format. Try again!')
+                continue
 
             if column < 1 or column > self.__board.board_width:
                 print('Incorrect column. Try again!')

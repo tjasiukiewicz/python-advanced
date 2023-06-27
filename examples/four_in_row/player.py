@@ -6,19 +6,22 @@ from token import Token
 
 class Player:
     def __init__(self, name, color):
-        self.__color = color
+        assert isinstance(color, Color)
+
         self.__name = name
+        self.__token = Token(color)
 
     def get_name(self):
         return self.__name
 
     def get_column(self):
+        token_repr = self.__token.get_repr()
         column = int(input(
-            f'Player {self.__name}, color {self.__color}. Input column: '))
+               f'Player {self.__name}, token {token_repr}. Input column: '))
         return column
 
     def get_token(self):
-        return Token(self.__color)
+        return self.__token
 
 
 if __name__ == '__main__':

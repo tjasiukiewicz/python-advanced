@@ -66,7 +66,7 @@ class Board:
         return True
 
     def is_full(self):
-        return all(self.__fields[self.board_height - 1])
+        return all(self.__fields[-1])
 
 
 if __name__ == '__main__':
