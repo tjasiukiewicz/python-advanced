@@ -11,6 +11,9 @@ class Token:
     def get_repr(self):
         return self.__my_repr
 
+    def get_color(self):
+        return self.__color
+
 
 if __name__ == '__main__':
     token = Token('X')

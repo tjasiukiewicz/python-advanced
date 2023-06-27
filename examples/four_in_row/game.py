@@ -3,16 +3,19 @@
 from board import Board
 from player import Player
 from color import Color
+from console import Console
 
 
 class Game:
     def __init__(self):
         self.__current_player = Player('Eve', Color.RED)
         self.__next_player = Player('Adam', Color.BLUE)
-        self.__board = Board()
+        self.__console = Console()
+        self.__board = Board(self.__console)
 
     def run(self):
-        self.__board.display()
+        self.__board.render()
+        self.__console.display()
 
         while not self.__board.is_full():
 
@@ -36,7 +39,8 @@ class Game:
             self.__current_player, self.__next_player = (
                     self.__next_player, self.__current_player)
 
-            self.__board.display()
+            self.__board.render()
+            self.__console.display()
 
         print('End game. Board is full.')
 
