@@ -1,0 +1,345 @@
+In [1]: a = 34
+
+In [2]: type(a)
+Out[2]: int
+
+In [3]: dir(a)
+Out[3]: 
+['__abs__',
+ '__add__',
+ '__and__',
+ '__bool__',
+ '__ceil__',
+ '__class__',
+ '__delattr__',
+ '__dir__',
+ '__divmod__',
+ '__doc__',
+ '__eq__',
+ '__float__',
+ '__floor__',
+ '__floordiv__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getnewargs__',
+ '__gt__',
+ '__hash__',
+ '__index__',
+ '__init__',
+ '__init_subclass__',
+ '__int__',
+ '__invert__',
+ '__le__',
+ '__lshift__',
+ '__lt__',
+ '__mod__',
+ '__mul__',
+ '__ne__',
+ '__neg__',
+ '__new__',
+ '__or__',
+ '__pos__',
+ '__pow__',
+ '__radd__',
+ '__rand__',
+ '__rdivmod__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__rfloordiv__',
+ '__rlshift__',
+ '__rmod__',
+ '__rmul__',
+ '__ror__',
+ '__round__',
+ '__rpow__',
+ '__rrshift__',
+ '__rshift__',
+ '__rsub__',
+ '__rtruediv__',
+ '__rxor__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__sub__',
+ '__subclasshook__',
+ '__truediv__',
+ '__trunc__',
+ '__xor__',
+ 'as_integer_ratio',
+ 'bit_count',
+ 'bit_length',
+ 'conjugate',
+ 'denominator',
+ 'from_bytes',
+ 'imag',
+ 'numerator',
+ 'real',
+ 'to_bytes']
+
+In [4]: class X:
+   ...:     def __add__(self, obj):
+   ...:         print('Class X __add__() method', obj)
+   ...: 
+
+In [5]: x1 = X()
+
+In [6]: x2 = X()
+
+In [7]: x1 + x2
+Class X __add__() method <__main__.X object at 0x7fb5ae04dc60>
+
+In [8]: class X:
+   ...:     def __str__(self):
+   ...:         return 'Class X str representation'
+   ...: 
+
+In [9]: x1 = X()
+
+In [10]: str(x1)
+Out[10]: 'Class X str representation'
+
+In [11]: print(x1)
+Class X str representation
+
+In [12]: class X:
+    ...:     def __repr__(self):
+    ...:         return 'Class X __repr__ representation'
+    ...: 
+
+In [13]: x1 = X()
+
+In [14]: print(x1)
+Class X __repr__ representation
+
+In [15]: str(x1)
+Out[15]: 'Class X __repr__ representation'
+
+In [16]: x1
+Out[16]: Class X __repr__ representation
+
+In [17]: class X:
+    ...:     pass
+    ...: 
+
+In [18]: x1 = X()
+
+In [19]: x1
+Out[19]: <__main__.X at 0x7fb5ad6d1330>
+
+In [20]: 
+
+In [20]: x1 = []
+
+In [21]: dir(x1)
+Out[21]: 
+['__add__',
+ '__class__',
+ '__class_getitem__',
+ '__contains__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__gt__',
+ '__hash__',
+ '__iadd__',
+ '__imul__',
+ '__init__',
+ '__init_subclass__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__mul__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__reversed__',
+ '__rmul__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'append',
+ 'clear',
+ 'copy',
+ 'count',
+ 'extend',
+ 'index',
+ 'insert',
+ 'pop',
+ 'remove',
+ 'reverse',
+ 'sort']
+
+In [22]: class X:
+    ...:     def __getitem__(self, idx):
+    ...:         return idx * 10
+    ...: 
+
+In [23]: x1 = X()
+
+In [24]: x1[1]
+Out[24]: 10
+
+In [25]: x1[2]
+Out[25]: 20
+
+In [26]: class X:
+    ...:     def __init__(self):
+    ...:         self.data = 0
+    ...:     def __setitem__(self, idx, value):
+    ...:         self.data = value
+    ...: 
+
+In [27]: x1 = X()
+
+In [28]: 
+
+In [28]: class X:
+    ...:     def __init__(self):
+    ...:         self.data = 0
+    ...:     def __setitem__(self, idx, value):
+    ...:         print(f'Class X __setitem__ {value} on index {idx}')
+    ...:         self.data = value
+    ...: 
+
+In [29]: x1 = X()
+
+In [30]: x1[34] = 42
+Class X __setitem__ 42 on index 34
+
+In [31]: x1 = []
+
+In [32]: d = {x1: 'coś'}
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-32-663d44c0fc35> in <module>
+----> 1 d = {x1: 'coś'}
+
+TypeError: unhashable type: 'list'
+
+In [33]: x1.__hash__()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-33-3beee553eb05> in <module>
+----> 1 x1.__hash__()
+
+TypeError: 'NoneType' object is not callable
+
+In [34]: class X:
+    ...:     def __hash__(self):
+    ...:         return 56
+    ...: 
+
+In [35]: x1 = X()
+
+In [36]: d = {x1: 'coś'}
+
+In [37]: x2 = X()
+
+In [38]: d[x2] = 'coś innego'
+
+In [39]: d
+Out[39]: 
+{<__main__.X at 0x7fb5ae169000>: 'coś',
+ <__main__.X at 0x7fb5ae1689a0>: 'coś innego'}
+
+In [40]: dir(x1)
+Out[40]: 
+['__class__',
+ '__delattr__',
+ '__dict__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__le__',
+ '__lt__',
+ '__module__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__weakref__']
+
+In [41]: o = object()
+
+In [42]: dir(o)
+Out[42]: 
+['__class__',
+ '__delattr__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__le__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__']
+
+In [43]: d = { X: 'coś' }
+
+In [44]: d[X] = 'coś innego'
+
+In [45]: d
+Out[45]: {__main__.X: 'coś innego'}
+
+In [46]: 
+
+In [46]: o.__reduce__?
+Signature: o.__reduce__()
+Docstring: Helper for pickle.
+Type:      builtin_function_or_method
+
+In [47]: a = 12
+
+In [48]: a.__add__?
+Signature:      a.__add__(value, /)
+Call signature: a.__add__(*args, **kwargs)
+Type:           method-wrapper
+String form:    <method-wrapper '__add__' of int object at 0x7fb5b1a8c250>
+Docstring:      Return self+value.
+
+In [49]: help(a.__add__)
+  Help on method-wrapper:
+   
+  __add__ = <method-wrapper '__add__' of int object>
+      Return self+value.
+
+
+
