@@ -2,6 +2,7 @@
 
 from token import Token
 
+
 class Board:
     board_width = 7
     board_height = 6
@@ -54,7 +55,7 @@ class Board:
         col_number -= 1
 
         # Check col is not empty
-        if self.__fields[self.board_height - 1][col_number] != None:
+        if self.__fields[self.board_height - 1][col_number] is not None:
             return False
 
         # Drop token into first row field
@@ -63,6 +64,10 @@ class Board:
         self.__token_gravity(token, col_number)
 
         return True
+
+    def is_full(self):
+        return all(self.__fields[self.board_height - 1])
+
 
 if __name__ == '__main__':
     board = Board()
