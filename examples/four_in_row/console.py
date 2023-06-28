@@ -3,10 +3,10 @@
 class Console:
     def __display_col_numbers(self):
         print('   ' + ' '.join(str(col_number + 1)
-              for col_number in range(7)))
+              for col_number in range(self.__width)))
 
     def __display_row_separator(self):
-        print('  ' + '+-' * 7, end='+\n')
+        print('  ' + '+-' * self.__width, end='+\n')
 
     def __display_row(self, row):
         self.__display_row_separator()
@@ -32,6 +32,7 @@ class Console:
 
     def set_state(self, data):
         self.__fields = data
+        self.__width = len(data[0])
 
 
 if __name__ == '__main__':
