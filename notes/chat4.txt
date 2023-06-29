@@ -1,0 +1,17 @@
+https://www.amazon.com/Pattern-Oriented-Software-Architecture-System-Patterns/dp/0471958697/ref=sr_1_1?keywords=pattern+oriented+software+architecture&qid=1688040459&s=books&sprefix=Patern+or%2Cstripbooks-intl-ship%2C187&sr=1-1
+https://helion.pl/ksiazki/wzorce-projektowe-analiza-kodu-sposobem-na-ich-poznanie-allen-holub,wzopro.htm#format/d
+https://www.amazon.com/Holub-Patterns-Learning-Looking-Professionals/dp/159059388X/ref=sr_1_1?crid=23CA0P8WI6OW7&keywords=Allen+Holub+patterns&qid=1688040628&sprefix=allen+holub+patterns%2Caps%2C171&sr=8-1
+https://www.infoq.com/
+https://docs.python.org/3/library/itertools.html
+https://docs.python.org/3/library/collections.html#collections.namedtuple
+https://docs.python.org/3/library/csv.html
+https://kaitai.io/
+https://www.swig.org/
+https://en.wikipedia.org/wiki/Concurrency_pattern
+https://docs.celeryq.dev/en/stable/getting-started/introduction.html
+https://twisted.org/
+https://subscription.packtpub.com/search?category=Programming&language=python#_ga=2.3556720.1704852532.1688028561-231801728.1688028561
+https://www.amazon.com/Art-Concurrency-Monkeys-Parallel-Applications/dp/0596521537/ref=sr_1_1?crid=1ATGWKIQXHECX&keywords=art+of+programming+concurrency&qid=1688028733&s=books&sprefix=art+of+programming+concurrency%2Cstripbooks-intl-ship%2C164&sr=1-1
+https://docs.python.org/3/c-api/arg.html
+https://www.swig.org/
+
