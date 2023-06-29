@@ -34,6 +34,11 @@ class Console:
         self.__fields = data
         self.__width = len(data[0])
 
+    def get_column(self, player_name, token_repr):
+        column = int(input(
+               f'Player {player_name}, token {token_repr}. Input column: '))
+        return column
+
 
 if __name__ == '__main__':
     pass

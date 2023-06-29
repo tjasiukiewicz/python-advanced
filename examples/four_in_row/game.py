@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 
+from game_context_creator import Game_Context_Creator
 from board import Board
 from player import Player
-from color import Color
 from console import Console
 
 
 class Game:
-    def __init__(self):
-        self.__current_player = Player('Eve', Color.RED)
-        self.__next_player = Player('Adam', Color.BLUE)
-        self.__console = Console()
-        self.__board = Board(self.__console)
+    def __init__(self, game_context):
+        self.__current_player = game_context.first_player
+        self.__next_player = game_context.second_player
+        self.__console = game_context.console
+        self.__board = game_context.board
 
     def run(self):
         self.__board.render()
